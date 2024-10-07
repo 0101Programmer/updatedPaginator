@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'menu.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ shop_title }}</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+            <h1> {{ shop_header }} </h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+            {{ block.super }}
+        {% endblock %}
+    </nav>
+
+    <footer>
+        {% block content %}
+            {% for game in games_list %}
+                <p>{{ game }}&nbsp;<button>{{buy}}</button></p>
+            {% endfor %}
+        {% endblock %}
+    </footer>
+</body>
+</html>

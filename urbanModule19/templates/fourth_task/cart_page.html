@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'menu.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cart_title }}</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+            <h1> {{cart_header}} </h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+            {{ block.super }}
+        {% endblock %}
+    </nav>
+
+    <footer>
+        {% block content %}
+            <p>{{ none }}</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>
